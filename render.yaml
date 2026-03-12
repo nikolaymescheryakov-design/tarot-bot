@@ -1,0 +1,13 @@
+services:
+  - type: worker
+    name: tarot-bot
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python3 main.py
+    envVars:
+      - key: TELEGRAM_TOKEN
+        sync: false
+      - key: GIGACHAT_AUTH_KEY
+        sync: false
+      - key: GIGACHAT_SCOPE
+        value: GIGACHAT_API_PERS
